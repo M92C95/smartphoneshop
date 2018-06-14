@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<jsp:include page="navigation.jsp"></jsp:include>
 <div class="container">
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">

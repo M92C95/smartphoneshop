@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<jsp:include page="navigation.jsp"></jsp:include>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8">

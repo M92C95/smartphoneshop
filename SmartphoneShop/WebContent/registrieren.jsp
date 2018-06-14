@@ -24,6 +24,7 @@
 </head>
 
 <body>
+<jsp:include page="navigation.jsp"></jsp:include>
 <div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -33,14 +34,25 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+				${ ERRORTEXT }
+					<form class="form-horizontal" method="post" action="RegistrierungServlet">
 						
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Dein Name</label>
+							<label for="vorname" class="cols-sm-2 control-label">Ihr Vorname</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<input type="text" class="form-control" name="vorname" id="vorname"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="nachname" class="cols-sm-2 control-label">Ihr Nachname</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="nachname" id="nachname"  placeholder="Enter your Name"/>
 								</div>
 							</div>
 						</div>
@@ -56,21 +68,21 @@
 						</div>
 
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Benutzername</label>
+							<label for="benutzername" class="cols-sm-2 control-label">Benutzername</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="benutzername" id="benutzername"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Passwort</label>
+							<label for="passwort" class="cols-sm-2 control-label">Passwort</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="passwort" id="passwort"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -86,7 +98,7 @@
 						</div>
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Registrieren</button>
 						</div>
 						<div class="login-register">
 				            <a href="anmelden.jsp">Anmeldung</a>

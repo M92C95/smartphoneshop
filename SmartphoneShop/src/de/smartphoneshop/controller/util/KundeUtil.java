@@ -43,7 +43,7 @@ public class KundeUtil {
 		// dann die Daten von der Datenbank entnehmen
 		String vorname = myRs.getString("vorname");
 		String nachname = myRs.getString("nachname");
-		String nutzername = myRs.getString("nutzername");
+		String benutzername = myRs.getString("benutzername");
 		String passwort = myRs.getString("passwort");
 		String email = myRs.getString("email");
 		int alter = myRs.getInt("alter");
@@ -51,7 +51,7 @@ public class KundeUtil {
 		// Zahlungsdaten zahlungsdaten = new Zahlungsdaten(bankinstitut, iban, bic);
 
 		// Einen neuen Benutzer erstellen mit den Parametern (Daten)
-		Kunde kunde = new Kunde(vorname, nachname, nutzername, passwort, email, alter);
+		Kunde kunde = new Kunde(vorname, nachname, benutzername, passwort, email, alter);
 
 		// Benutzer der list kundenliste hinzufügen
 		kundenliste.add(kunde);

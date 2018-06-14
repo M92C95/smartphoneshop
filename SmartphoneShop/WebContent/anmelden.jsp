@@ -23,6 +23,7 @@
 </head>
 <body>
 
+<jsp:include page="navigation.jsp"></jsp:include>
 <div class="container">
 			<div class="row main">
 				<div class="panel-heading">

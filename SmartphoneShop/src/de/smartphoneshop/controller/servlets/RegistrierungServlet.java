@@ -3,6 +3,7 @@ package de.smartphoneshop.controller.servlets;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,15 +12,12 @@ import javax.servlet.http.HttpSession;
 import de.smartphoneshop.controller.util.KundeUtil;
 import de.smartphoneshop.kunde.Kunde;
 
-//import de.smartphoneshop.controller.util.KundenUtil;
-//import de.smartphoneshop.model.personen.Kunde;
-
-//@WebServlet("/RegistrierungServlet")
+@WebServlet("/RegistrierungServlet")
 public class RegistrierungServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private static final String ERRORTEXT = "Bitte geben Sie ein Passwort ein und bestätigen sie dieses.";
-    private final KundeUtil kundenUtil = new KundeUtil();
+    private final KundeUtil kundeUtil = new KundeUtil();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,26 +37,27 @@ public class RegistrierungServlet extends HttpServlet {
 	String vorname = request.getParameter("vorname");
 	String nachname = request.getParameter("nachname");
 	String email = request.getParameter("email");
-	String nutzername = request.getParameter("nutzername");
+	String benutzername = request.getParameter("benutzername");
 	String passwort = request.getParameter("passwort");
 	String confirm = request.getParameter("confirm");
 	String alter = request.getParameter("alter");
-	Integer alter2 = Integer.parseInt(alter);// parse nötig weil getParameter nur mit String funktioniert
+	// Integer alter2 = Integer.parseInt(alter);// parse nötig weil getParameter nur
+	// mit String funktioniert
 
 	try {
 	    // Passwort muss zweimal übereinstimmend eingegeben werden
 	    if (checkPasswort(passwort, confirm)) {
 		// falls Passwort korrekt, wird Kunde mit Daten aus der JSP erstellt
-		Kunde kunde = new Kunde(vorname, nachname, nutzername, passwort, email, alter2);
+		Kunde kunde = new Kunde(vorname, nachname, benutzername, passwort, email);
 		HttpSession session = request.getSession();
-		kundenUtil.kundeHinzufuegen(kunde);
+		kundeUtil.kundeHinzufuegen(kunde);
 		// Kunde wird als Session gesetzt
-		session.setAttribute("LOGIN_KUNDE", kunde);
+		session.setAttribute("ANMELDUNG_KUNDE", kunde);
 		// und man wird auf das Profil weitergeleitet
 		request.getRequestDispatcher("profil.jsp").forward(request, response);
 	    } else {
 		System.out.println("Passwort leer oder stimmt nicht überein.");
-		request.setAttribute("ERRORTEXT", ERRORTEXT);
+		// request.setAttribute("ERRORTEXT", ERRORTEXT);
 		request.getRequestDispatcher("registrieren.jsp").forward(request, response);
 	    }
 	} catch (Exception e) {
