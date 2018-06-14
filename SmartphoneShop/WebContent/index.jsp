@@ -4,158 +4,70 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<title>SmartphoneShop</title>
 </head>
 <body>
-<%@ page language="java" %>
-<table width="993" height="330" border="0">
-  <tr>
-    <td width="205" height="89"><img src="head.png" width="251" height="88" alt="Logo" />
-    <hr /></td>
-    <td width="772"><table width="723" height="88" border="0">
-      <tr>
-        <td width="713" class="right">24X7 Customer Support - Contact us  | Home | 
-        <% if(session.getAttribute("uname")==null) {
-			%>
-            <a href="login.jsp">Login</a> | <a href="register.jsp">Signup</a>
-            <%} else {
-				%>
-                <a href="logout.jsp">Logout</a>
-                <%}%>
-                </td>
-      </tr>
-      <tr>
-        <td><form id="form1" name="form1" method="post" action="search.jsp">
-          <input name="search" type="text" id="search" size="60" />
-          <label>
-            <input type="submit" name="submit" id="button" value="Search" />
-          </label>
-        </form></td>
-      </tr>
-    </table>
-    <hr /></td>
-  </tr>
-  <tr>
-    <td><table width="251" height="482" border="0">
-      <tr>
-        <td height="184"><table width="242" height="171" border="0">
-          <tr>
-            <td class="normal">MOBILE BRANDS</td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="brand" /><input type="hidden" name="category" value="Samsung" /><input type="image" src="images/sam.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="brand" /><input type="hidden" name="category" value="Nokia" /><input type="image" src="images/nok.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="brand" /><input type="hidden" name="category" value="Sony" /><input type="image" src="images/son.png" /></form></td>
-          </tr>
-          <tr>
-            <td height="22"><form action="category.jsp">
-            <input type="hidden" name="type" value="brand" /><input type="hidden" name="category" value="HTC" /><input type="image" src="images/htc.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="brand" /><input type="hidden" name="category" value="LG" /><input type="image" src="images/lg.png" /></form></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td height="201"><table width="243" height="180" border="0">
-          <tr>
-            <td width="233" class="normal">MOBILE TYPES</td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="mtype" /><input type="hidden" name="category" value="and" /><input type="image" src="images/and.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="mtype" /><input type="hidden" name="category" value="sma" /><input type="image" src="images/sma.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="mtype" /><input type="hidden" name="category" value="dua" /><input type="image" src="images/dua.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="mtype" /><input type="hidden" name="category" value="val" /><input type="image" src="images/val.png" /></form></td>
-          </tr>
-          <tr>
-            <td><form action="category.jsp">
-            <input type="hidden" name="type" value="mtype" /><input type="hidden" name="category" value="win" /><input type="image" src="images/win.png" /></form></td>
-          </tr>
-        </table></td>
-      </tr>
-      
-    </table></td>
-    <td><table width="725" height="684" border="0">
-      <tr class="normal">
-        <td height="30">NEW ARRIVALS</td>
-      </tr>
-      <tr>
-        <td height="261"><table width="714" height="258" border="0">
-          <tr>
-            <td width="228"><table width="120" height="173" border="0" align="center">
-              <tr>
-                <td><form action="product.jsp"> 
-<input type="hidden" name="product" value="S001"> 
-<input name="buy" type="image" value="grand" src="images/in_GT-I9082EWAINU_000000001_Front_white.jpg" width="114" height="165"> 
-</form></td>
-              </tr>
-            </table>
-              <p class="center1">Samsung Galaxy Grand</p>
-              <p class="center1">Rs. 21,500</p>
-            </td>
-            <td width="240" class="center1"><table width="117" height="173" border="0" align="center">
-              <tr>
-                <td width="111"><form action="product.jsp"> 
-<input type="hidden" name="product" value="S002">
-<input name="buy" type="image" value="s4" src="images/in_GT-I9500ZWAINU_042_Front_black.jpg" width="100" height="165"> 
-</form></td>
-              </tr>
-            </table></p>
-              <p>Samsung Galaxy S4</p>
-              <p>Rs. 41,500</p></td>
-            <td width="224"><table width="120" height="173" border="0" align="center">
-              <tr>
-                <td><form action="product.jsp"> 
-<input type="hidden" name="product" value="L001"> 
-<input name="buy" type="image" value="g pro" src="images/LG-Optimus-G-Pro_8.jpg" width="104" height="165"> 
-</form></td>
-              </tr>
-            </table>
-              <p class="center1">LG Optimus G Pro</p>
-              <p class="center1">Rs. 38,970</p>
-            </td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr class="normal">
-        <td height="31">FEATURED MOBILES</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
-      <tr class="normal">
-        <td height="27">BESTSELLING MOBILES</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
-      <tr class="normal">
-        <td height="27">BUDGET MOBILES</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li>
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      </li>
+    </ul>
+    <a class="nav-item" href="warenkorb.jsp"><i class="fas fa-shopping-cart"> Warenkorb</i></a>
+    <a class="nav-link" href="registrieren.jsp">Registrieren</a>
+    <a class="nav-link" href="anmelden.jsp">Anmelden</a>
+  </div>
+</nav>
+
+<div class="row">
+
+				<div class="col-lg-12">
+					<h1 class="page-header">Aktuelle Alben</h1>
+				</div>
+
+				<c:forEach items="${ ARTIKEL_LISTE }" var="artikel" begin="0" end="11">
+					<c:url var="trackAnsichtLink" value="ArtikelServlet">
+						<c:param name="command" value="TRACK_ANSICHT" />
+						<c:param name="idArtikel" value="${ artikel.idArtikel }" />
+					</c:url>
+					<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+						<a class="thumbnail" href="${ trackAnsichtLink }"><img
+							height=400px width=300px
+							src="/Projekt/BildServlet?idArtikel=${ artikel.idArtikel }"
+							title="${ artikel.interpret } - ${ artikel.album }"></a>
+					</div>
+				</c:forEach>
+
+
+			</div>
 
 </body>
 </html>
